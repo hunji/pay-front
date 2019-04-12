@@ -153,7 +153,7 @@ module.exports = {
   parallel: require('os').cpus().length > 1,
   pwa: {},
   devServer: {
-    open: IS_PROD,
+    open: true,
     host: '0.0.0.0',
     port: 8000,
     https: false,
@@ -161,7 +161,10 @@ module.exports = {
     proxy: {
       '/api': {
         target: process.env.VUE_APP_BASE_API || 'http://127.0.0.1:8080',
-        changeOrigin: true
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     }
   }

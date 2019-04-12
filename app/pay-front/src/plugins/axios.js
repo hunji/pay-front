@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use strict";
 
 import Vue from 'vue';
@@ -12,6 +13,11 @@ let config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
+  timeout: 1000 * 30,
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json; charset=utf-8'
+  }
 };
 
 const _axios = axios.create(config);
