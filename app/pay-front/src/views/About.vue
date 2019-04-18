@@ -1,9 +1,6 @@
 <template>
   <div class="about">
-    <el-button  type="primary" @click="getBalance()">查询余额</el-button>
     <span>{{ balance }}</span>
-    <br/>
-    <el-button  @click="getHistoryData()">查询历史明细</el-button>
     <ul>
       <li v-for="test in testData" :key="test.uniquekey">
         <p>{{test.author_name}} {{test.date}}</p>
@@ -12,6 +9,25 @@
         <span>{{test.url}}</span>
       </li>
     </ul>
+  <el-row class="tac">
+    <el-col :span="20" :offset="2" class="content">
+      <img alt="Vue logo" src="../assets/back.jpg">
+      <el-menu
+      default-active="2"
+      class="el-menu-vertical-demo"> 
+      <el-menu-item index="2" @click="getBalance()">
+        <i class="el-icon-menu"></i>
+        <span>账户信息查询</span>
+        <i class="el-icon-arrow-right"></i>
+      </el-menu-item>
+      <el-menu-item index="3"  @click="getHistoryData()">
+       <i class="el-icon-tickets"></i>
+        <span>交易明细查询</span>
+        <i class="el-icon-arrow-right"></i>
+      </el-menu-item>
+    </el-menu>
+    </el-col>
+  </el-row>
   </div>
 </template>
 
@@ -49,3 +65,17 @@ export default {
   }
 }
 </script>
+
+<style>
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+.el-menu-item{
+  border: 1px solid gainsboro
+}
+.el-icon-arrow-right{
+  margin-left:80px
+}
+</style>
