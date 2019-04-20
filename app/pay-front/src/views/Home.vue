@@ -3,6 +3,12 @@
   <el-row class="tac">
     <el-col :span="20" :offset="2" class="content">
       <img alt="Vue logo" src="../assets/back.jpg">
+      <div style="margin: 10px;"></div>
+      <el-form :inline="true" label-position="left" class="demo-form-inline">
+        <el-form-item label="清验证卡号">
+          <el-input v-model="cardNo" placeholder="卡号"></el-input>
+        </el-form-item>
+      </el-form>
       <el-menu
       default-active="2"
       class="el-menu-vertical-demo">
@@ -16,7 +22,7 @@
         <span>消费汇总信息</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
-      <el-menu-item index="3"  @click="getDetail()">
+      <el-menu-item index="4"  @click="getDetail()">
        <i class="el-icon-date"></i>
         <span>消费明细查询</span>
         <i class="el-icon-arrow-right"></i>
