@@ -159,11 +159,11 @@ module.exports = {
     https: false,
     hotOnly: false,
     proxy: {
-      '/api': {
-        target: process.env.VUE_APP_BASE_API || 'http://127.0.0.1:8080',
+      '/card': {
+        target: 'http://218.26.36.12:19094/card',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/card': ''
         }
       }
     }
