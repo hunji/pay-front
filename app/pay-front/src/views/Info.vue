@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>
+    <h2 class="title">
       账号信息查询
     </h2>
     <el-row :gutter="20" class="content">
@@ -8,8 +8,8 @@
         <el-col :offset="6" :span="8" style="text-align:right">{{cardNo}}</el-col>
     </el-row>
     <el-row :gutter="20" class="content">
-        <el-col :offset="2" :span="6" style="text-align:left">余额</el-col>
-        <el-col :offset="6" :span="8" style="text-align:right">{{ye}}</el-col>
+        <el-col :offset="2" :span="6" style="text-align:left">剩余次数</el-col>
+        <el-col :offset="6" :span="8" style="text-align:right">{{Math.abs(Math.round(ye/100))}}</el-col>
     </el-row>
     <el-row :gutter="20" class="content">
         <el-col :offset="2" :span="6" style="text-align:left">制卡日期</el-col>
@@ -57,6 +57,9 @@ export default {
       } else {
         return '未知状态'
       }
+    },
+    cardStore () {
+      return this.$store.state.cardNO
     }
   },
   created () {
@@ -64,7 +67,7 @@ export default {
   },
   methods: {
     getInfo () {
-      this.cardNo = '1001011010000036'
+      this.cardNo = this.cardStore
       this.axios.get('/card/' + this.cardNo + '/info')
         .then(({ data }) => {
           if (data && data.ret === 0) {
@@ -82,6 +85,9 @@ export default {
 </script>
 
 <style>
+  .title{
+    background-color: aliceblue;
+  }
   .content {
     border-bottom: 1px solid #dcdfe6;
     text-align: left;

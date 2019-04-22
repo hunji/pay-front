@@ -5,8 +5,8 @@
       <img alt="Vue logo" src="../assets/back.jpg">
       <div style="margin: 10px;"></div>
       <el-form :inline="true" label-position="left" class="demo-form-inline">
-        <el-form-item label="清验证卡号">
-          <el-input v-model="cardNo" placeholder="卡号"></el-input>
+        <el-form-item label="请输入卡号:">
+          <el-input v-model="cardNo" type="number"  prefix-icon="el-icon-search" @change="setCard()" placeholder="卡号"></el-input>
         </el-form-item>
       </el-form>
       <el-menu
@@ -42,15 +42,45 @@ export default {
       testData: []
     }
   },
+  computed: {
+    cardStore () {
+      return this.$store.state.cardNO
+    }
+  },
+  mounted () {
+    this.cardNo = this.cardStore
+  },
   methods: {
     getInfo () {
-      this.$router.push({ path: 'info' })
+      if (this.checkData()) {
+        this.$router.push({ path: 'info' })
+      }
     },
     getSummary () {
-      this.$router.push({ path: 'summary' })
+      if (this.checkData()) {
+        this.$router.push({ path: 'summary' })
+      }
     },
     getDetail () {
-      this.$router.push({ path: 'details' })
+      if (this.checkData()) {
+        this.$router.push({ path: 'details' })
+      }
+    },
+    setCard () {
+      this.$store.commit('changeCard', this.cardNo)
+    },
+    checkData () {
+      if (this.cardNo.length === 0) {
+        this.$notify({
+          title: '警告',
+          message: '卡号不能为空',
+          type: 'warning',
+          showClose: false
+        })
+        return false
+      } else {
+        return true
+      }
     }
   }
 }

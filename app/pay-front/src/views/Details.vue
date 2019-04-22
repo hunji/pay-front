@@ -1,25 +1,11 @@
 <template>
   <div>
-    <h2>
+    <h2 class="title">
        交易明细
     </h2>
     <el-form label-position="left" label-width="100px">
       <el-form-item label="账号">
         {{cardNo}}
-      </el-form-item>
-      <el-form-item label="开始日期：">
-        <el-date-picker
-        v-model="dataValue1"
-        type="date"
-        placeholder="选择日期">
-      </el-date-picker>
-      </el-form-item>
-      <el-form-item label="结束日期：">
-        <el-date-picker
-        v-model="dataValue2"
-        type="date"
-        placeholder="选择日期">
-      </el-date-picker>
       </el-form-item>
     </el-form>
     <el-row>
@@ -29,14 +15,13 @@
       <el-collapse-item v-for="item in this.dataList" v-bind:key="item.xtgzh">
         <template slot="title">
             <i class="el-icon-time"></i> {{item.jyrq}}
-            <span style="margin-left:40%">金额：{{item.fse}}</span>
+            <span style="margin-left:40%">消费次数:{{Math.abs(Math.round(item.fse/100))}}</span>
         </template>
-        <div>商户号：{{item.tshxxid}}</div>
+        <div>结算批次    {{item.jspc}}</div>
+        <div>终端号      {{item.tid}}</div>
+        <div>商户号：    {{item.tshxxid}}</div>
+        <div>系统跟踪号  {{item.xtgzh}}</div>
         <div>终端流水号：{{item.zdlsh}}</div>
-        <div>是否结算：
-        <span v-if="item.jsbz==='1'"><i class="el-icon-success"></i>{{item.jzrq}} </span>
-        <span v-else><i class="el-icon-error"></i></span>
-        </div>
       </el-collapse-item>
     </el-collapse>
     <div style="margin-top:30px;">
@@ -66,6 +51,9 @@ export default {
       } else {
         return '未知状态'
       }
+    },
+    cardStore () {
+      return this.$store.state.cardNO
     }
   },
   created () {
@@ -73,7 +61,7 @@ export default {
   },
   methods: {
     getDetails () {
-      this.cardNo = '1001011010000036'
+      this.cardNo = this.cardStore
       this.axios.get('/card/' + this.cardNo + '/detail')
         .then(({ data }) => {
           if (data && data.ret === 0) {
@@ -88,6 +76,9 @@ export default {
 </script>
 
 <style>
+  .title{
+    background-color: aliceblue;
+  }
   .el-row{
     margin-top: 5px;
   }
