@@ -25,6 +25,11 @@ export default new Router({
       path: '/details',
       name: 'details',
       component: () => import('./views/Details.vue')
+    },
+    {
+      path: '/rules',
+      name: 'rules',
+      component: () => import('./views/ServiceRules.vue')
     }
   ]
 })

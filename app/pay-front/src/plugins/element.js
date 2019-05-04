@@ -11,7 +11,8 @@ import {
   Form,
   FormItem,
   Input,
-  Notification
+  Notification,
+  Card
 } from 'element-ui'
 
 Vue.use(Button)
@@ -25,5 +26,6 @@ Vue.use(MenuItem)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
+Vue.use(Card)
 
 Vue.prototype.$notify = Notification

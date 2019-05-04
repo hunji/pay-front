@@ -1,7 +1,7 @@
 <template>
   <div class="about">
   <el-row class="tac">
-    <el-col :span="20" :offset="2" class="content">
+    <el-col :span="20" :offset="2">
       <img alt="Vue logo" src="../assets/back.jpg">
       <div style="margin: 10px;"></div>
       <el-form :inline="true" label-position="left" class="demo-form-inline">
@@ -12,16 +12,19 @@
       <el-menu
       default-active="2"
       class="el-menu-vertical-demo">
+      <el-menu-item index="3"  @click="getRules()">
+        <span>服务细则</span>
+      </el-menu-item>
       <el-menu-item index="2" @click="getInfo()">
         <i class="el-icon-menu"></i>
         <span>账户信息查询</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
-      <el-menu-item index="3"  @click="getSummary()">
+      <!-- <el-menu-item index="3"  @click="getSummary()">
        <i class="el-icon-tickets"></i>
         <span>消费汇总信息</span>
         <i class="el-icon-arrow-right"></i>
-      </el-menu-item>
+      </el-menu-item> -->
       <el-menu-item index="4"  @click="getDetail()">
        <i class="el-icon-date"></i>
         <span>消费明细查询</span>
@@ -65,6 +68,9 @@ export default {
       if (this.checkData()) {
         this.$router.push({ path: 'details' })
       }
+    },
+    getRules () {
+      this.$router.push({ path: 'rules' })
     },
     setCard () {
       this.$store.commit('changeCard', this.cardNo)
