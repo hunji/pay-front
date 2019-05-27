@@ -1,15 +1,25 @@
 <template>
-  <div class="about">
-  <el-row class="tac">
+  <div>
+    <div>
+      <img src="../assets/head.jpg">
+    </div>
+    <div>
+      <img src="../assets/background.jpg">
+    </div>
+    <el-row class="tac">
     <el-col :span="20" :offset="2">
-      <img alt="Vue logo" src="../assets/back.jpg">
       <div style="margin: 10px;"></div>
       <el-form :inline="true" label-position="left" class="demo-form-inline">
-        <el-form-item label="请输入卡号:">
-          <el-input v-model="cardNo" type="number"  prefix-icon="el-icon-search" @change="setCard()" placeholder="卡号"></el-input>
+        <el-form-item >
+          <el-input v-model="cardNo" type="number"   prefix-icon="el-icon-date" @change="setCard()" placeholder="请输入卡号"></el-input>
         </el-form-item>
       </el-form>
-      <el-menu
+       <div style="margin: 30px;"></div>
+       <el-button type="danger"  @click="getInfo()" round style="width:240px;">查询</el-button>
+
+       <div style="margin: 50px;"></div>
+       <el-link type="primary">贵宾客户专享权益</el-link>
+      <!-- <el-menu
       default-active="2"
       class="el-menu-vertical-demo">
       <el-menu-item index="3"  @click="getRules()">
@@ -20,19 +30,17 @@
         <span>贵宾客户信息查询</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
-      <!-- <el-menu-item index="3"  @click="getSummary()">
-       <i class="el-icon-tickets"></i>
-        <span>消费汇总信息</span>
-        <i class="el-icon-arrow-right"></i>
-      </el-menu-item> -->
       <el-menu-item index="4"  @click="getDetail()">
        <i class="el-icon-date"></i>
         <span>贵宾厅使用记录&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
-    </el-menu>
+    </el-menu> -->
     </el-col>
-  </el-row>
+    </el-row>
+    <div>
+      <img src="../assets/bottom.jpg" style="width:40%;margin-top:70px">
+    </div>
   </div>
 </template>
 

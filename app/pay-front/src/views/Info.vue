@@ -70,7 +70,7 @@ export default {
       this.cardNo = this.cardStore
       this.axios.get('/card/' + this.cardNo + '/info')
         .then(({ data }) => {
-          if (data && data.ret === 0) {
+          if (data.data && data.ret === 0) {
             this.ye = data.data.ye
             this.makecarddate = data.data.makecarddate
             this.opencarddate = data.data.opencarddate
