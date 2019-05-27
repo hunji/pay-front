@@ -13,11 +13,11 @@
       default-active="2"
       class="el-menu-vertical-demo">
       <el-menu-item index="3"  @click="getRules()">
-        <span>服务细则</span>
+        <span>贵宾客户专享权益</span>
       </el-menu-item>
       <el-menu-item index="2" @click="getInfo()">
         <i class="el-icon-menu"></i>
-        <span>账户信息查询</span>
+        <span>贵宾客户信息查询</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
       <!-- <el-menu-item index="3"  @click="getSummary()">
@@ -27,7 +27,7 @@
       </el-menu-item> -->
       <el-menu-item index="4"  @click="getDetail()">
        <i class="el-icon-date"></i>
-        <span>消费明细查询</span>
+        <span>贵宾厅使用记录&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <i class="el-icon-arrow-right"></i>
       </el-menu-item>
     </el-menu>
@@ -92,7 +92,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 img {
   vertical-align: middle;
   max-width: 100%;

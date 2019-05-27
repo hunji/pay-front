@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="title">
-      账号信息查询
+      贵宾客户信息查询
     </h2>
     <el-row :gutter="20" class="content">
         <el-col :offset="2" :span="6" style="text-align:left">卡号</el-col>
@@ -11,14 +11,14 @@
         <el-col :offset="2" :span="6" style="text-align:left">剩余次数</el-col>
         <el-col :offset="6" :span="8" style="text-align:right">{{Math.abs(Math.round(ye/100))}}</el-col>
     </el-row>
-    <el-row :gutter="20" class="content">
+    <!-- <el-row :gutter="20" class="content">
         <el-col :offset="2" :span="6" style="text-align:left">制卡日期</el-col>
         <el-col :offset="6" :span="8" style="text-align:right">{{makecarddate}}</el-col>
     </el-row>
     <el-row :gutter="20" class="content">
         <el-col :offset="2" :span="6" style="text-align:left">开卡日期</el-col>
         <el-col :offset="6" :span="8" style="text-align:right">{{opencarddate}}</el-col>
-    </el-row>
+    </el-row> -->
     <el-row :gutter="20" class="content">
         <el-col :offset="2" :span="6" style="text-align:left">状态</el-col>
         <el-col :offset="6" :span="8" style="text-align:right">{{statusMsg}}</el-col>
@@ -84,7 +84,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .title{
     background-color: aliceblue;
   }

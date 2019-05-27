@@ -1,27 +1,25 @@
 <template>
   <div>
     <h2 class="title">
-       交易明细
+       贵宾客户明细查询
     </h2>
     <el-form label-position="left" label-width="100px">
-      <el-form-item label="账号">
+      <el-form-item label="卡号">
         {{cardNo}}
       </el-form-item>
     </el-form>
-    <el-row>
-      <el-button style="width:100%;" type="primary">查询</el-button>
-    </el-row>
+
     <el-collapse accordion>
       <el-collapse-item v-for="item in this.dataList" v-bind:key="item.xtgzh">
         <template slot="title">
             <i class="el-icon-time"></i> {{item.jyrq}}
             <span style="margin-left:40%">消费次数:{{Math.abs(Math.round(item.fse/100))}}</span>
         </template>
-        <div>结算批次    {{item.jspc}}</div>
+        <!-- <div>结算批次    {{item.jspc}}</div>
         <div>终端号      {{item.tid}}</div>
         <div>商户号：    {{item.tshxxid}}</div>
         <div>系统跟踪号  {{item.xtgzh}}</div>
-        <div>终端流水号：{{item.zdlsh}}</div>
+        <div>终端流水号：{{item.zdlsh}}</div> -->
       </el-collapse-item>
     </el-collapse>
     <div style="margin-top:30px;">
@@ -75,7 +73,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .title{
     background-color: aliceblue;
   }

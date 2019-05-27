@@ -2,7 +2,7 @@
 <div>
   <el-card class="box-card">
   <div slot="header" class="clearfix">
-    <span>机场贵宾厅服务细则：
+    <span>贵宾客户专享权益
       <el-button style="float: right; padding: 3px 0" type="text">贵宾专享</el-button>
     </span>
   </div>
@@ -11,7 +11,7 @@
       一、服务内容
     </span>
     <span class="rule">
-      晋商银行<strong style="color:red">机场贵宾卡、白金卡持卡</strong>人尊享每年山西武宿机场贵宾出行及随行总计<strong style="color:red">12</strong>次的机场贵宾厅服务。
+      晋商银行白金信用卡持卡人尊享每年总计<strong style="color:red">6</strong>次武宿机场贵宾厅服务，晋商银行钻石信用卡持卡人尊享每年总计<strong style="color:red">12</strong>次武宿机场贵宾厅服务。
     </span>
   </div>
   <div class="text item">
@@ -19,7 +19,7 @@
      二、使用方法
     </span>
     <span class="rule">
-您前往指定机场贵宾厅后，向贵宾厅前台礼宾员出示您的卡片，礼宾员通过机场专用POS核销您的服务次数。
+      持卡人前往晋商银行专属机场贵宾厅后，向贵宾厅前台礼宾员出示您的卡片，礼宾员通过机场专用POS核销您的服务次数。
     </span>
   </div>
   <div class="text item">
@@ -27,11 +27,19 @@
      三、服务范围
      </span>
     <span class="rule">
-1、专属休息室（区）。
-2、专属进站通道。
-3、免费休闲。专属贵宾室（区）内免为贵宾提供电视、电脑、报刊、杂志等休闲娱乐设备。
-4、免费茶点。专属贵宾室（区）免费为贵宾客户提供饮料、茶水及简单食品。
-<strong>服务周期内剩余可使用的贵宾厅的服务权益解释权归晋商银行所有，详情可致电：95105588</strong>
+       1、 专属休息室（区）。
+    </span>
+    <span class="rule">
+        2、 专属进站通道。
+    </span>
+    <span class="rule">
+       3、 免费休闲。专属贵宾室（区）内免为贵宾提供电视、电脑、报刊、杂志等休闲娱乐设备。
+    </span>
+    <span class="rule">
+       4、 免费茶点。专属贵宾室（区）免费为贵宾客户提供饮料、茶水及简单食品。
+    </span>
+    <span class="rule">
+       5、服务周期内剩余可使用的贵宾厅的服务权益解释权归晋商银行所有，详情可致电信用卡贵宾专线：<strong>400-666-5588</strong>
     </span>
   </div>
   </el-card>
@@ -43,7 +51,7 @@
 </div>
 </template>
 
-<style>
+<style scoped>
   .text {
     font-size: 14px;
   }
@@ -56,6 +64,8 @@
     display:block;
   }
   .box-card {
-    width: 380px;
+    width: 90%;
+    display:table;
+    margin:0 auto;
   }
 </style>
