@@ -30,6 +30,11 @@ export default new Router({
       path: '/rules',
       name: 'rules',
       component: () => import('./views/ServiceRules.vue')
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('./views/Search.vue')
     }
   ]
 })

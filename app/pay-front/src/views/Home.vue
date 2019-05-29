@@ -11,14 +11,14 @@
       <div style="margin: 10px;"></div>
       <el-form :inline="true" label-position="left" class="demo-form-inline">
         <el-form-item >
-          <el-input v-model="cardNo" type="number"   prefix-icon="el-icon-date" @change="setCard()" placeholder="请输入卡号"></el-input>
+          <el-input v-model="cardNo" @keyup.native="number" prefix-icon="el-icon-date" @change="setCard()" placeholder="请输入卡号"></el-input>
         </el-form-item>
       </el-form>
        <div style="margin: 30px;"></div>
        <el-button type="danger"  @click="getInfo()" round style="width:240px;">查询</el-button>
 
        <div style="margin: 50px;"></div>
-       <el-link type="primary">贵宾客户专享权益</el-link>
+       <span @click="getRules()">贵宾客户专享权益</span>
       <!-- <el-menu
       default-active="2"
       class="el-menu-vertical-demo">
@@ -62,9 +62,13 @@ export default {
     this.cardNo = this.cardStore
   },
   methods: {
+    number () {
+      // eslint-disable-next-line
+      this.cardNo = this.cardNo.replace(/[^\.\d]/g, '')
+    },
     getInfo () {
       if (this.checkData()) {
-        this.$router.push({ path: 'info' })
+        this.$router.push({ path: 'search' })
       }
     },
     getSummary () {
