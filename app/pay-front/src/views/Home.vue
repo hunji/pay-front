@@ -18,7 +18,10 @@
        <el-button type="danger"  @click="getInfo()" round style="width:240px;">查询</el-button>
 
        <div style="margin: 50px;"></div>
-       <span @click="getRules()">贵宾客户专享权益</span>
+       <div @click="getRules()">
+         <img src="../assets/1.jpg" style="width:30px;">
+         <span >贵宾客户专享权益</span> 
+       </div>
       <!-- <el-menu
       default-active="2"
       class="el-menu-vertical-demo">
@@ -38,8 +41,8 @@
     </el-menu> -->
     </el-col>
     </el-row>
-    <div>
-      <img src="../assets/bottom.jpg" style="width:40%;margin-top:70px">
+    <div style="margin-top:20px;">
+      <img src="../assets/bottom.jpg">
     </div>
   </div>
 </template>

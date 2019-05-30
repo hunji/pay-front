@@ -3,18 +3,13 @@
   <div>
     <img src="../assets/quanyi.jpg">
   </div>
-  <div style="margin-top:30px;">
-      <router-link to='/'>
-        <i class="el-icon-back"></i>
-      </router-link>
-  </div>
 </div>
 </template>
 
 <style scoped>
   img {
     vertical-align: middle;
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
   } 
   .text {

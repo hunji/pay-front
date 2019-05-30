@@ -4,11 +4,11 @@
       <img src="../assets/head.jpg" style="margin-bottom:5px;">
     </div>
      <el-card class="box-card">
-        <el-row :gutter="20" class="content">
-          <el-col :span="2" style="text-align:left">
-            <img src="../assets/1.jpg" style="width:25px;" >
+        <el-row class="content">
+          <el-col :span="1" style="text-align:left">
+            <img src="../assets/1.jpg" style="width:100px;">
           </el-col>
-          <el-col :span="6" style="text-align:left">
+          <el-col :span="5" style="text-align:left">
             <span style="color:#d00707">客户信息</span>
           </el-col>
         </el-row>
@@ -27,26 +27,26 @@
     </el-card>
     <div style="height:20px;"></div>
     <el-card class="box-card" style="min-height: 400px;">
-      <el-row :gutter="20" class="content">
-          <el-col :span="2" style="text-align:left">
-            <img src="../assets/2.jpg" style="width:25px;" >
+      <el-row class="content">
+          <el-col :span="1" style="text-align:left">
+            <img src="../assets/2.jpg" style="width:100px;">
           </el-col>
-          <el-col :span="6" style="text-align:left">
+          <el-col :span="5" style="text-align:left">
             <span style="color:#d00707">使用明细</span>
           </el-col>
       </el-row>
-      <el-row :gutter="20" class="content" style="border-bottom: 1px solid #d00707; ">
-        <el-col :offset="2" :span="6" style="text-align:left">服务时间</el-col>
-        <el-col :offset="1" :span="4" style="text-align:right">次数</el-col>
-        <el-col :offset="1" :span="8" style="text-align:right">服务详情</el-col>
+      <el-row class="content" style="border-bottom: 1px solid #d00707; ">
+        <el-col :offset="2" :span="8" style="text-align:left">服务时间</el-col>
+        <el-col :offset="1" :span="4" style="text-align:center">次数</el-col>
+        <el-col :offset="1" :span="6" style="text-align:right">服务详情</el-col>
       </el-row>
-      <el-row :gutter="20" class="content" v-for="item in this.dataList" v-bind:key="item.xtgzh" style="border-bottom: 1px solid #ebeef5; ">
-        <el-col :offset="2" :span="6" style="text-align:left">{{item.jyrq}}</el-col>
-        <el-col :offset="1" :span="4" style="text-align:right">{{Math.abs(Math.round(item.fse/100))}}</el-col>
-        <el-col :offset="1" :span="8" style="text-align:right">{{item.xtgzh}}</el-col>
+      <el-row class="content" v-for="item in this.dataList" v-bind:key="item.xtgzh" style="border-bottom: 1px solid #ebeef5; ">
+        <el-col :offset="2" :span="8" style="text-align:left">{{item.jyrq}}</el-col>
+        <el-col :offset="1" :span="4" style="text-align:center">{{Math.abs(Math.round(item.fse/100))}}</el-col>
+        <el-col :offset="1" :span="6" style="text-align:right">{{item.xtgzh}}</el-col>
       </el-row>
     </el-card>
-    <div>
+    <div style="margin-top:20px;">
       <img src="../assets/bottom.jpg">
     </div>
   </div>
@@ -137,5 +137,8 @@ img {
   .box-card {
     width: 96%;
     margin-left: 2%;
+  }
+  .icon-list li i {
+    color: #d00707;
   }
 </style>
