@@ -155,7 +155,7 @@ module.exports = {
     hotOnly: false,
     proxy: {
       '/card': {
-        target: 'http://218.26.36.12:9913/card',
+        target: 'http://218.26.36.12:19094/card',
         changeOrigin: true,
         pathRewrite: {
           '^/card': ''

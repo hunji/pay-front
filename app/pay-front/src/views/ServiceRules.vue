@@ -11,11 +11,10 @@
     vertical-align: middle;
     max-width: 100%;
     height: auto;
-  } 
+  }
   .text {
     font-size: 14px;
   }
-
   .item {
     margin-bottom: 8px;
   }

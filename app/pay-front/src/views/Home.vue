@@ -20,7 +20,7 @@
        <div style="margin: 50px;"></div>
        <div @click="getRules()">
          <img src="../assets/1.jpg" style="width:30px;">
-         <span >贵宾客户专享权益</span> 
+         <span >贵宾客户专享权益</span>
        </div>
       <!-- <el-menu
       default-active="2"

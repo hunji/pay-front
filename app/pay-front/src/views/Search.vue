@@ -96,18 +96,19 @@ export default {
             this.makecarddate = data.data.makecarddate
             this.opencarddate = data.data.opencarddate
             this.status = data.data.status
+            this.dataList = data.extend.detail
           } else {
             console.log('后台获取数据错误')
           }
         })
-      this.axios.get('/card/' + this.cardNo + '/detail')
-        .then(({ data }) => {
-          if (data && data.ret === 0) {
-            this.dataList = data.data
-          } else {
-            console.log('后台获取数据错误')
-          }
-        })
+      // this.axios.get('/card/' + this.cardNo + '/detail')
+      //   .then(({ data }) => {
+      //     if (data && data.ret === 0) {
+      //       this.dataList = data.data
+      //     } else {
+      //       console.log('后台获取数据错误')
+      //     }
+      //   })
     }
   }
 }
