@@ -96,17 +96,17 @@ module.exports = {
       .set('static', resolve('src/static'))
 
     // 压缩图片
-    config.module
-    .rule("images")
-    .use("image-webpack-loader")
-    .loader("image-webpack-loader")
-    .options({
-    mozjpeg: { progressive: true, quality: 65 },
-    optipng: { enabled: false },
-    pngquant: { quality: "65-90", speed: 4 },
-    gifsicle: { interlaced: false },
-    webp: { quality: 75 }
-    });
+    // config.module
+    // .rule("images")
+    // .use("image-webpack-loader")
+    // .loader("image-webpack-loader")
+    // .options({
+    // mozjpeg: { progressive: true, quality: 65 },
+    // optipng: { enabled: false },
+    // pngquant: { quality: "65-90", speed: 4 },
+    // gifsicle: { interlaced: false },
+    // webp: { quality: 75 }
+    // });
   },
   css: {
     modules: false,
